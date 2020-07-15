@@ -9,7 +9,10 @@ import { DB_CONNECTION_STRING, ROUTES_DIR, MODELS_DIR, USE_DB } from '../var/con
 import { globFiles } from '../helpers'
 
 export default function() {
-  const app: express.Express = express()
+  /**
+   * @type {express.Express}
+   */
+  const app = express()
 
   for (const model of globFiles(MODELS_DIR)) {
     require(path.resolve(model))

@@ -2,7 +2,10 @@ import { Express } from 'express'
 import { indexController } from '../controllers/index.server.controller'
 
 export default class IndexRoute {
-  constructor(app: Express) {
+  /**
+   * @param {Express} app 
+   */
+  constructor(app) {
     app.route('/').get(indexController.index)
     app.route('/msg').get(indexController.msg)
   }
